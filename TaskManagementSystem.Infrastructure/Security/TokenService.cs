@@ -20,7 +20,7 @@ namespace TaskManagementSystem.Infrastructure.Security
         {
             var claims = new[]
             {
-        new Claim(JwtRegisteredClaimNames.Sub, userId.ToString()), // 👈 MUST
+        new Claim(JwtRegisteredClaimNames.Sub, userId.ToString()), 
         new Claim(ClaimTypes.Role, role)
     };
 
@@ -29,7 +29,7 @@ namespace TaskManagementSystem.Infrastructure.Security
             );
 
             var token = new JwtSecurityToken(
-                issuer: _config["Jwt:Issuer"],          // ✅ ADD
+                issuer: _config["Jwt:Issuer"],         
                 audience: _config["Jwt:Audience"],
                 claims: claims,
                 expires: DateTime.UtcNow.AddMinutes(15),

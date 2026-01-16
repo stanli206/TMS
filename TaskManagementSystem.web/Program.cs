@@ -25,7 +25,10 @@ builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 builder.Services.AddScoped<CreateTaskHandler>();
 builder.Services.AddScoped<CompleteTaskHandler>();
 builder.Services.AddScoped<GetTasksHandler>();
+builder.Services.AddScoped<ArchiveTaskHandler>();   
+builder.Services.AddScoped<DeleteTaskHandler>();
 builder.Services.AddScoped<LoginHandler>();
+
 builder.Services.AddScoped<ITokenService, TokenService>();
 
 // AUTH
@@ -48,7 +51,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization();
 
-// SWAGGER (ONLY ONCE)
+// SWAGGER 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {

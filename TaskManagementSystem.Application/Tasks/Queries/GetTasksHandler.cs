@@ -21,7 +21,7 @@ public class GetTasksHandler
 
         if (q.Status.HasValue)
         {
-            // ✅ Domain enum ONLY
+           
             spec = new TaskByStatusSpec(q.Status.Value);
         }
         else
